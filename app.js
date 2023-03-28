@@ -4,7 +4,7 @@ const fileUpload = require('express-fileupload')
 const methodOverride = require('method-override')
 const ejs = require('ejs')
 const fs = require('fs')
-const photoController = require('./controller/photoController')
+const postController = require('./controller/postController')
 
 mongoose.connect('mongodb://127.0.0.1:27017/photo-test', {
     useNewUrlParser: true,
@@ -30,16 +30,17 @@ app.use(fileUpload())
 app.use(methodOverride('_method', {
     methods: ['POST','GET']
 }))
-// ROUTES
-app.get('/', photoController.photoControl.showData)
-app.get('/photo/:id', photoController.photoControl.getPhoto)
-app.post('/photos', photoController.photoControl.uploadImage)
-app.put('/photo/edit/:id', photoController.photoControl.photoUpdate)
-app.delete('/photo/:id', photoController.photoControl.deleteData)
-app.get('/photo/edit/:id', photoController.photoControl.getEditData)
 
-app.get('/add-photo',(req,res) => {
-    res.render('add-photo')
+// ROUTES
+app.get('/', postController.postControl.showPosts)
+app.get('/post/:id', postController.postControl.getPost)
+app.post('/post-add', postController.postControl.createPost)
+app.put('/post/edit/:id', postController.postControl.postUpdate)
+app.delete('/post/:id', postController.postControl.deletePost)
+app.get('/post/edit/:id', postController.postControl.getEditData)
+
+app.get('/add-post',(req,res) => {
+    res.render('add-post')
 })
 app.get('/about',(req,res) => {
     res.render('about')

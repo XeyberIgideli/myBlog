@@ -30,18 +30,18 @@
 						<div class="col-xl-8 col-lg-7">
 							<!-- Video description -->
 							<div class="tm-video-description-box">
-								<h2 class="mb-5 tm-video-title"><%= photoData.title  %></h2>
-								<p class="mb-4"><%= photoData.description  %><p>
+								<h2 class="mb-5 tm-video-title"><%= postData.title  %></h2>
+								<p class="mb-4"><%= postData.description  %><p>
 							</div>							
 						</div>
 						<div class="col-xl-4 col-lg-5">
 							<!-- Share box -->
 							<div class="tm-bg-gray tm-share-box">
 								<div class="pb-4 ">
-									<a href="/photo/edit/<%= photoData.id  %>" class="btn btn-primary p-0 tm-btn-animate tm-btn-download tm-icon-download"><span>Download Video</span></a>	
+									<a href="/post/edit/<%= postData.id  %>" class="btn btn-primary p-0 tm-btn-animate tm-btn-download tm-icon-download"><span>Download Video</span></a>	
 								</div>	
 								<div>
-									<a href="/photo/<%= photoData.id  %>?_method=DELETE" onclick="return confirm
+									<a href="/post/<%= postData.id  %>?_method=DELETE" onclick="return confirm
 									('Are you sure?')" class="btn btn-danger p-0 tm-btn-animate tm-btn-download tm-icon-trash"><span>Download Video</span></a>	
 								</div>								
 							</div>
