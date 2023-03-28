@@ -1,2 +1,2 @@
 ﻿# MyBlog
- # My first little Node.js project
+ My first little Node.js project
